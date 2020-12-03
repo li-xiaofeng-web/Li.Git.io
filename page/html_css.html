@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="imagw/x-icon" href="../li.ico">
+	<title>Li 的前端博客</title>
+	<link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+	<div class="main">
+		<div class="header-main">
+			<div class="header">
+				<div class="title">Li的前端博客</div>
+				<div class="menu">
+					<a href="../index.html" class="menu-item">首页</a>
+					<a class="menu-item active">HTML / CSS</a>
+					<a class="menu-item">javaScript</a>
+					<a class="menu-item">jQuery</a>
+					<a class="menu-item">VUE</a>
+					<a class="menu-item">ECharts</a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="code-block">
+				<div class="title">CSS 布局</div>
+				<div class="sub-title">1. 水平居中</div>
+				① display: inline-block; text-align: center; (text-align具有继承性，子元素徐自定义覆盖)<br/>
+				② position: absolute; left: 50%; transform: translateX(-50%); （父元素需要设置position）<br/>
+				③ display: block； margin: 0 auto; 子元素不能脱离文档流，否则外边距失效<br/>
+				<div class="sub-title">2. 垂直居中</div>
+				① position: absolute; top: 50%; transform: translateY(-50%) ;（父元素需要设置position）<br/>
+				② display: table-cell;  vertical-align: center; (vertical-align具有继承性，子元素徐自定义覆盖)<br/>
+				<div class="sub-title">3. 水平垂直居中</div>
+				① position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) ;（父元素需要设置position）<br/>
+
+				
+				<div>1. 水平居中</div>
+				① display: inline-block; text-align: center; (text-align具有继承性，子元素徐自定义覆盖)<br/>
+				② position: absolute; left: 50%; transform: translateX(-50%); （父元素需要设置position）<br/>
+				③ display: block； margin: 0 auto; 子元素不能脱离文档流，否则外边距失效<br/>
+				<div>2. 垂直居中</div>
+				① position: absolute; top: 50%; transform: translateY(-50%) ;（父元素需要设置position）<br/>
+				② display: table-cell;  vertical-align: center; (vertical-align具有继承性，子元素徐自定义覆盖)<br/>
+				<div>3. 水平垂直居中</div>
+				① position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) ;（父元素需要设置position）<br/>
+			</div>
+			<div class="code-explain"></div>
+		</div>
+	</div>
+</body>
+</html>
