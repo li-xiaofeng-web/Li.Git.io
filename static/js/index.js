@@ -3,3 +3,7 @@
 //     $(event.target).addClass('active');
 //     console.log($(event.target).attr('id'));
 // })
+
+// $('.title').click(() => {     // 鼠标点击事件
+//     console.log(111);
+// })

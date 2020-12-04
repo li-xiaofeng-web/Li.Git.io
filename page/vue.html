@@ -5,21 +5,21 @@
 	<link rel="icon" type="imagw/x-icon" href="../static/image/li.ico">
 	<title>Li 的前端博客</title>
 	<link rel="stylesheet" href="../static/css/index.css">
-	<script src="../static/js/html_css_data.js"></script>
+	<script src="../static//js/vue_data.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="../static/js/showdown-master/dist/showdown.min.js"></script>
 </head>
 <body>
-	<div class="main" id="J-html-css">
+	<div class="main" id="J-Jquery">
 		<div class="header-main">
 			<div class="header">
 				<div class="title">Li的前端博客</div>
 				<div class="menu">
 					<a href="../index.html" class="menu-item">首页</a>
-					<a class="menu-item active">HTML / CSS</a>
+					<a href="../page/html_css.html" class="menu-item">HTML / CSS</a>
 					<a href="../page/javaScript.html" class="menu-item">javaScript</a>
 					<a href="../page/Jquery.html" class="menu-item">jQuery</a>
-					<a href="../page/vue.html" class="menu-item">VUE</a>
+					<a class="menu-item active">VUE</a>
 					<a href="../page/ECharts.html" class="menu-item">ECharts</a>
 				</div>
 			</div>
@@ -35,13 +35,11 @@
 </body>
 <script>
 	var app = new Vue({
-		el: '#J-html-css',
+		el: '#J-Jquery',
 		data: {
 			data_arr: [],
 		},
 		mounted(){
-			// this.data_arr = return_data();
-			// console.log(this.data_arr);
 			this.compile();
 		},
 		methods:{

@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    user-select: none;
     
     ::-webkit-scrollbar     /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
     {  
@@ -25,25 +24,54 @@
 html,body{
     width: 100%;
     height: 100%;
-    // background-image: url('../static/image/background_image.jpg');
+    user-select: none;
+    background-image: url('../image/background_image.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    overflow: hidden;
+    // background-color: #B2DBBF;
 }
 .main{
-    width: 1000px;
+    width: 1200px;
     background-color: #70C1B3;
     margin: 10px auto;
     padding: 10px 0;
     border-radius: 10px;
+
+    .Qr-codimg{
+        margin: 50px 0;
+        position: relative; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 200px;
+        display: inline-block;
+    
+        img{
+            width: 100%;
+        }
+    }
+    .explain{    // 首页
+        margin-top: -20px;
+        user-select: none;
+        color: #F7FFF7;
+        padding-bottom: 50px;
+        
+        >div{
+            display: flex;
+            justify-content: center;
+            line-height: 3;
+        }
+    }
 }
 
 .header-main{    // 头部 
-    width: 1000px;
+    width: 1200px;
     height: 100%;
     position: relative;
+    user-select: none;
 
     .header{
-        width: 1000px;
+        width: 1200px;
         height: 50px;
         display: flex;
         justify-content: space-between;
@@ -87,34 +115,35 @@ html,body{
     }
 }
 
-.explain{    // 首页
-    margin-top: 30px;
-    
-    >div{
-        display: flex;
-        justify-content: center;
-        line-height: 3;
-    }
-}
-
 .content{     // 内容区域
-    display: flex;
-    margin-top: 20px;
+    // min-height: 400px;
+    user-select: none;
+    height: 650px;
+    overflow: auto;
+
+    @keyframes cssAnimation{
+        0%{margin-bottom: -1000px;}
+        1000%{ margin-bottom: 0px; }
+    }
 
     .code-block{     // 代码块
-        width: 900px;
-        height: 400px;
+        width: 1000px;
+        max-height: 400px;
         background-color:#F7FFF7;
         overflow: auto;
-        margin: 0px 50px;
         border-radius: 10px;
         padding: 20px;
         box-sizing: border-box;
         user-select: text;
         white-space: nowrap;
         line-height: 30px;
-        margin: 0 auto;
         color: #011627;
+        margin: 20px auto;
+        font-size: 15px;
+        animation:cssAnimation 2s ease 0s 1;
+
+        ::selection { background:#E8AA14; }    /* webkit, opera, IE9 */
+        ::-moz-selection { background:#E8AA14; }    /* mozilla firefox */
 
         .title{
             font-size: 20px;
@@ -124,15 +153,7 @@ html,body{
             margin-bottom: 10px;
             padding: 0 100px 5px 0;
             width: max-content;
-        }
-
-        .sub-title{
-            
+            user-select: none;
         }
     }
-    // .code-explain{      // 代码说明
-    //     width: 400px;
-    //     height: 400px;
-    //     overflow: auto;
-    // }
 }
