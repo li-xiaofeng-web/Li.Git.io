@@ -279,4 +279,37 @@ let obj = [
     };
     `,
     },
+    
+    {
+        title: 'vue main.js 路由守卫 && 判断是不是钉钉环境',
+        content:  
+    `
+    import * as dd from 'dingtalk-jsapi';     // 引入钉钉js文件
+    router.beforeEach((to, from, next) => {
+        // from: 从哪里来
+        // to: 到何处去
+        // next: 路由的控制参数，next(true) || next(false)
+        if (dd.env.platform != 'notInDingTalk') {
+            // 是钉钉环境
+        }else{
+            // 不是钉钉环境
+        }
+    })
+    `,
+    },
+    
+    {
+        title: 'vue下载后台返回的流文件',
+        content:  
+    `
+    this.$axios.postFile(url,'参数').then(res => res.blob()).then(data => {
+        var blob = new Blob([data], {type:'application/vnd.ms-excel'})
+        var link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "定义文件名";
+        link.click();
+        window.URL.revokeObjectURL(link.href);
+    })
+    `,
+    },
 ];
