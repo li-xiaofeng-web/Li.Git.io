@@ -250,4 +250,33 @@ let obj = [
     }
     `,
     },
+    
+    {
+        title: 'vue.config.js配置',
+        content:  
+    `
+    // 配置完成需要重启项目
+    const BASE_URL = process.env.NODE_ENV === 'production' ? '/生产环境指向名/' : '/';
+    module.exports = {
+        publicPath: BASE_URL,    // 基本路径
+        outputDir: 'dist',    // 构建时输出目录
+        assetsDir: 'static',     // 放置静态资源路径
+        indexPath: 'index.html',      // html输出路径
+        filenameHashing: true,      // 文件名哈希
+        devServer: {     // webPack代理
+            proxy: {
+                '/apis': {
+                    target: 'xxxxxxxxxx',     //要访问的跨域的域名
+                    ws: true,
+                    secure:false,     // 使用的是http协议则设置为false，https协议则设置为true
+                    changOrigin: true,
+                    pathRewrite: {
+                        '^/apis': ''
+                    }
+                }
+            }
+        },
+    };
+    `,
+    },
 ];
