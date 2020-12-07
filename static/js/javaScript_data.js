@@ -380,4 +380,19 @@ let obj = [
     }, 3000);
     `,
     },
+    
+    {
+        title: '上传文件',
+        content:  
+    `
+    upload_file(event){
+        const isSize = event.target.files[0].size / 1024 / 1024 < 5;
+        if (!isSize) {     // 判断大小
+            this.$message.error('上传文件/图片大小不能超过 5MB!');
+        }else{
+            file: event.target.files[0];     // 文件,请求接口当作参数上传
+        }
+    }
+    `,
+    },
 ];
