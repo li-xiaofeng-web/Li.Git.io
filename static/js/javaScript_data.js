@@ -16,6 +16,130 @@ let obj = [
     7. 避免不必要的三目运算符，const a = b ? c : b   替换   const a = b || c
     `,
     },
+
+    {
+        title: 'JavaScript 代码调试',
+        content:  
+    `
+    · debugger 关键字，执行到则停止；
+    · 浏览器调试窗口试着断点
+    `,
+    },
+    
+    {
+        title: 'HTML 事件',
+        content:  
+    `
+    onchange	HTML 元素改变
+    onclick	   用户点击 HTML 元素
+    onmouseover    	用户在一个HTML元素上移动鼠标
+    onmouseout   	用户从一个HTML元素上移开鼠标
+    onload	   浏览器已完成页面的加载
+    `,
+    },
+    
+    {
+        title: '数字',
+        content:  
+    `
+    toFixed(num)	 把数字转换为字符串，四舍五入保留小数点后 num 位小数
+    Number("3.14")      // 返回 3.14
+    Number(" ")       // 返回 0 
+    Number("")       // 返回 0
+    Number("99 88")      // 返回 NaN
+    Number(false)     // 返回 0
+    Number(true)     // 返回 1
+    `,
+    },
+    
+    {
+        title: '字符串',
+        content:  
+    `
+    字符串属性
+    constructor  	返回创建字符串属性的函数
+    length	   返回字符串的长度
+    prototype   	允许向对象添加属性和方法
+
+    字符串方法
+    charAt()	 返回指定索引位置的字符
+    charCodeAt()   	 返回指定索引位置字符的 Unicode 值
+    concat()	 连接两个或多个字符串，返回连接后的字符串
+    fromCharCode()	   将 Unicode 转换为字符串
+    indexOf()	 返回字符串中检索指定字符第一次出现的位置
+    lastIndexOf()	 返回字符串中检索指定字符最后一次出现的位置
+    localeCompare()	    用本地特定的顺序来比较两个字符串
+    match()	    找到一个或多个正则表达式的匹配
+    replace()	 替换与正则表达式匹配的子串
+    search()	检索与正则表达式相匹配的值
+    slice()	    提取字符串的片断，并在新的字符串中返回被提取的部分
+    split()	    把字符串分割为子字符串数组
+    substr()	 从起始索引号提取字符串中指定数目的字符
+    substring()	    提取字符串中两个指定的索引号之间的字符
+    toLocaleLowerCase()	    根据主机的语言环境把字符串转换为小写，只有几种语言（如土耳其语）具有地方特有的大小写映射
+    toLocaleUpperCase()	    根据主机的语言环境把字符串转换为大写，只有几种语言（如土耳其语）具有地方特有的大小写映射
+    toLowerCase()	  把字符串转换为小写
+    toString()	   返回字符串对象值
+    toUpperCase()	 把字符串转换为大写
+    trim()	   移除字符串首尾空白
+    valueOf()	   返回某个字符串对象的原始值
+    `,
+    },
+    
+    {
+        title: 'JavaScript Switch 语句',
+        content:  
+    `
+    // 把表达式的值与每个 case 的值进行对比，如果匹配，执行关联代码并结束语句;
+    switch(表达式) {
+        case x:
+            代码
+            break;
+        case x:
+            代码
+            break;
+        default:
+            默认代码
+    } 
+    `,
+    },
+    
+    {
+        title: 'for...in',
+        content:  
+    `
+    // 我用来遍历对象
+    let obj = {a: 111,b:222,c:333};
+    for(item in obj){
+        console.log(item + ' --- ' + obj[item])
+    }
+    // 输出 a --- 111 b --- 222 c --- 333
+    `,
+    },
+    
+    {
+        title: 'for...of',
+        content:  
+    `
+    // 可以对Arrays（数组）, Strings（字符串）, Maps（映射）, Sets（集合）等可迭代的数据结构;
+    let arr = ['a','c','e']
+    for(item of arr){
+        console.log(item)
+    }
+    // 输出 a c e
+    `,
+    },
+    
+    {
+        title: 'javaScript输出',
+        content:  
+    `
+    window.alert()    alert("弹出警告框")
+    document.write()    document.write("将此内容写到 HTML 文档中"));文档完成加载时调用页面将被覆盖
+    innerHTML    document.getElementById("id").innerHTML = "写入到 HTML 元素的内容"
+    console.log()    写入到浏览器的控制台
+    `,
+    },
     
     {
         title: '将两个数组并为一个json对象',
@@ -143,7 +267,18 @@ let obj = [
         title: '正则',
         content:  
     `
-    将字符串中英文括号替换成中文括号
+    // 正则表达式修饰符
+    i	 执行对大小写不敏感的匹配
+    g	 执行全局匹配 (查找所有匹配而非在找到第一个匹配后停止 )
+    m	 执行多行匹配
+    
+    元字符是拥有特殊含义的字符
+    \d	  查找数字
+    \s	  查找空白字符
+    \b	  匹配单词边界
+    \\uxxxx	  查找以十六进制数 xxxx 规定的 Unicode 字符
+
+    // 将字符串中英文括号替换成中文括号
     let reg1 = /[\(]/g, reg2 = /[\)]/g;
     let str = '(中国）';
     str = str.replace(reg1, "（").replace(reg2, "）");
@@ -334,6 +469,7 @@ let obj = [
         title: '浏览器本地存储 -- localStorage(永久性储存)',
         content:  
     `
+    // sessionStorage 一样，但是是会话级储存，会话结束，数据删除
     // localStorage写入三种方式
     storage["a"]=1;
     storage.a=1;

@@ -29,6 +29,7 @@ let obj = [
     `
     pointer-events: none;    // 点击事件穿透
     user-select:none;     // 禁止选中内容
+    background-image: linear-gradient(to right, red , yellow);     // 'to tight bottom'就是从左上角到右下角的渐变
     `,
     },
 

@@ -8,7 +8,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="./static/js/jquery.min.js"></script>
 </head>
-<body>
+<body onclick="getMousePos(event)">
 	<div class="main">
 		<div class="header-main">
 			<div class="header">
@@ -36,4 +36,10 @@
 		</div>
 	</div>
 </body>
+<script>
+	function getMousePos(event) {
+		var e = event || window.event;
+		return {'x':e.screenX,'y':screenY}
+	}
+</script>
 </html>
