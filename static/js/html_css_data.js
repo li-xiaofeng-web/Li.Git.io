@@ -24,6 +24,15 @@ let obj = [
     },
 
     {
+        title: 'html展示 base64 格式图片',
+        content:  
+    `
+    <img src="base64变量"/>
+    // base64 前边没有 'data:image/jpeg;base64,' 需要拼接
+    `,
+    },
+
+    {
         title: 'CSS',
         content:  
     `

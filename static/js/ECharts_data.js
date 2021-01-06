@@ -7,6 +7,273 @@ let obj = [
         title: '标题（title）',
         content:  
     `
+    option = {
+        backgroundColor: "#fff",
+        series: [
+            {
+                type: 'gauge',
+                name: '外层辅助',
+                radius: '90%',
+                startAngle: '180',
+                endAngle: '0',
+                pointer: {
+                    show: false
+                },
+                detail: {
+                    show: false,
+                },
+                data: [{
+                    value: 1
+                }],
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        color: [
+                            [1, 'rgb(0,191,255)'],
+                        ],
+                        width: 2,     // 最外层线粗细
+                        opacity: 1
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: true,
+                    length: 20,
+                    lineStyle: {
+                        color: '#051932',
+                        width: 0,
+                        type: 'solid',
+                    },
+                },
+                axisLabel: {
+                    show: false
+                }
+            },
+            {
+                type: 'gauge',
+                name: '外层渐变辅助',
+                radius: '85%',
+                startAngle: '180',
+                endAngle: '0',
+                pointer: {
+                    show: false
+                },
+                detail: {
+                    show: false,
+                },
+                data: [{
+                    value: 1
+                }],
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        color: [
+
+                            // 			颜色渐变函数 前四个参数分别表示四个位置依次为 右上左下
+
+                            [1, new echarts.graphic.LinearGradient(0.6, 0, 0, 0, [{
+                                offset: 1,
+                                color: 'rgba(1,191,249,0.8)' // 0% 处的颜色
+                            }, {
+                                offset: 0,
+                                color: 'rgba(221,70,70,0.8)' // 100% 处的颜色
+                            }], false)],
+                        ],
+                        width: 30,     // 最外层线粗细
+                        opacity: 1
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    show: true,
+                    length: 20,
+                    lineStyle: {
+                        color: '#051932',
+                        width: 0,
+                        type: 'solid',
+                    },
+                },
+                axisLabel: {
+                    show: false
+                }
+            },
+            {
+                name: '内层数据刻度',
+                type: 'gauge',
+                startAngle: '180',
+                endAngle: '0',
+                radius: '70%',
+                min: 0,
+                max: 500,
+                center: ['50%', '50%'],
+                axisLine: {
+                    lineStyle: {
+                        width: 30,
+                        color: [
+                            [0, 'rgba(0, 0, 0 ,0)'],
+                            [0.5, new echarts.graphic.LinearGradient(
+                                0, 1, 0, 0,
+                                [{
+                                    offset: 0,
+                                    color: 'rgba(0, 0, 0 ,0)'
+                                }, {
+                                    offset: 0.8,
+                                    color: 'rgba(0, 0, 0 ,0)'
+                                }]
+                            )],
+                            [0.9, new echarts.graphic.LinearGradient(
+                                0, 1, 0, 0,
+                                [{
+                                    offset: 0,
+                                    color: 'rgba(0, 0, 0 ,0)'
+                                }, {
+                                    offset: 0.6,
+                                    color: 'rgba(0, 0, 0 ,0)'
+                                }]
+                            )],
+                            [1, 'rgba(0, 0, 0 ,0)']
+                        ],
+                    }
+                },
+                splitLine: {
+                    length: 20,
+                    lineStyle: {
+                        width: 2,
+                        color: 'rgb(0,191,255)'    // 刻度 大格颜色
+                    }
+                },
+                axisTick: {
+                    lineStyle: {
+                        width: 2,
+                        color: 'rgb(0,191,255)'    // 刻度 小格颜色
+                    }
+                },
+                axisLabel: {
+                    color: 'rgb(0,191,255)',    // 刻度 数字颜色
+                    distance: 10,
+                    fontSize: 10,
+                },
+                detail: {
+                    show: false,
+                },
+                pointer: {
+                    width: 5,
+                    length: '135%'
+                },
+                // markPoint: {
+                //     animation: false,
+                //     silent: true,
+                //     data: [{
+                //         x: '20%',
+                //         y: '10%',
+                //         symbol: 'triangle',
+                //         symbolSize: 20,
+                //         itemStyle: {
+                //         symbolRotate: 120,
+                //             color: '#5470C6',
+                //         },
+                //     },]
+                // },
+                data: [
+                    {
+                        value: 110,
+                        itemStyle: {
+                            color: 'rgb(130,144,146)'   // 指针颜色 
+                        },
+                    }, {
+                        value: 400,
+                        itemStyle: {
+                            color: 'rgb(22,104,128)'   // 指针颜色 
+                        },
+                    }
+                ],
+                silent: false
+            },
+            {
+                name: '小圆形',
+                type: 'pie',
+                hoverAnimation: false,
+                legendHoverLink: false,
+                tooltip: {
+                    show: false
+                },
+                center: ['50%', '50%'],
+                radius: ['4%'],
+                z: 20,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: false
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                animation: false,
+                data: [{
+                    value: 100,
+                    name: '2',
+                    itemStyle: {
+                        normal: {
+                            color: '#01BFF9'
+                        }
+                    }
+                }]
+            },
+            // {
+            //     name: '最内层线',
+            //     type: 'gauge',
+            //     radius: '30%',
+            //     center: ['50%', '50%'],
+            //     startAngle: 180,
+            //     endAngle: 0,
+            //     axisLine: {
+            //         show: false,
+            //         lineStyle: {
+            //             opacity: 0,
+            //         }
+            //     },
+            //     splitLine: {
+            //         show: false,
+            //         lineStyle: {
+            //             opacity: 0
+            //         }
+            //     },
+            //     axisLabel: {
+            //         show: false
+            //     },
+            //     axisTick: {
+            //         length: 2,
+            //         lineStyle: {
+            //             color: '#00b3ff',
+            //             width: 3,
+            //             type: 'solid'
+            //         }
+            //     },
+            //     detail: {
+            //         show: false
+            //     },
+            //     pointer: {
+            //         show: false
+            //     }
+            // }
+        ]
+    `,
+    },
+
+    {
+        title: '标题（title）',
+        content:  
+    `
     tooltip: {
         show: true,    // 是否显示提示框组件
         text: '',     // 主标题文本，支持使用 \n 换行。
@@ -48,8 +315,8 @@ let obj = [
         borderRadius: 10,     // 圆角半径
     }
     `,
-
     },
+
     {
         title: '提示框（tooltip）',
         content:  

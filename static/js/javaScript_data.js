@@ -53,6 +53,17 @@ let obj = [
     },
     
     {
+        title: 'js 分钟数转化为天数和小时数',
+        content:  
+    `
+    let min = 9999;
+    this.center_info.three.day = ((min - (min % 60)) / 60 - ((min - (min % 60)) / 60 % 24)) / 24;
+    this.center_info.three.hour = ((min - (min % 60)) / 60) % 24;
+    this.center_info.three.min = min % 60;
+    `
+    },
+    
+    {
         title: '字符串',
         content:  
     `

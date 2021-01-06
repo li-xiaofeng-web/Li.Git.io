@@ -4,6 +4,26 @@ function return_data () {
 
 let obj = [
     {
+        title: '循环元素的所有子元素',
+        content:  
+    `
+    $('元素').children().each(function(){
+        console.log($(this).text())
+    });
+    `,
+    },
+
+    {
+        title: '操作元素class',
+        content:  
+    `
+    $('元素').addClass('class名称');     // 向元素添加class
+    $('元素').removeClass('class名称');     // 删除元素指定class
+    $("元素").hasClass("nav-active");     // 查看元素是否存在这个class
+    `,
+    },
+    
+    {
         title: '点击小图显示大图(事件委托)',
         content:  
     `
