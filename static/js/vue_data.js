@@ -281,6 +281,19 @@ let obj = [
     },
     
     {
+        title: 'vue + element-ui 日期选择器 移动端选择日期输入框获取焦点不调起键盘',
+        content:  
+    `
+    <el-date-picker @focus="forbid" v-model="date" value-format="yyyy-MM-dd" type="date" placeholder="选择日期"></el-date-picker>
+    methods: {
+        forbid(){
+            document.activeElement.blur();
+        }
+    }
+    `,
+    },
+    
+    {
         title: 'vue main.js 路由守卫 && 判断是不是钉钉环境',
         content:  
     `

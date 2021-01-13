@@ -14,6 +14,16 @@ let obj = [
     },
 
     {
+        title: '将 元素 下所有子元素去除 active 类',
+        content:  
+    `
+    $('元素').children().each(function(){
+        $(this).removeClass('active');
+    });
+    `,
+    },
+
+    {
         title: '操作元素class',
         content:  
     `
