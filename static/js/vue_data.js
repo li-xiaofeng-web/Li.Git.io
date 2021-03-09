@@ -42,32 +42,18 @@ let obj = [
         title: '通过$once来监听定时器，在beforeDestroy钩子被清除。',
         content:  
     `
-    const timer = setInterval(() => {
-        // 某些定时器操作
-    }, 500);
-    
-    this.$once("hook:beforeDestroy", () => {
-        clearInterval(timer);
-    });
+    mounted() {
+        const timer = setInterval(() => {
+            // 某些定时器操作
+        }, 1000);
+        
+        this.$once("hook:beforeDestroy", () => {
+            clearInterval(timer);
+        });
+    }
     `,
     },
     
-    
-    {
-        title: '过滤器 -- 根据文本内容改变字体颜色',
-        content:  
-    `
-    <div v-html="$options.filters.font_color(参数)"></div>
-    filters:{
-        font_color: function(val){
-            if(val == '文本内容'){
-                return '<div style="color:red;">'+val+'</div>'
-            }
-            return '<div>'+val+'</div>'
-        }
-    },
-    `,
-    },
     
     {
         title: '过滤器 -- 根据文本内容改变字体颜色',
