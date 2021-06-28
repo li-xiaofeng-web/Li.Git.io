@@ -28,7 +28,15 @@ let obj = [
         content:  
     `
     <img src="base64变量"/>
-    // base64 前边没有 'data:image/jpeg;base64,' 需要拼接
+    // base64 前边如果没有 'data:image/jpeg;base64,' 需要拼接
+    `,
+    },
+
+    {
+        title: 'html',
+        content:  
+    `
+    <img draggable="false" src="路径">    // 禁止图片拖动
     `,
     },
 

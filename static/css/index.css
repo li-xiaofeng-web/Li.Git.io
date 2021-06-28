@@ -111,6 +111,13 @@ body {
   height: 90vh;
   overflow: auto;
 }
+.content .home-page-cont{
+  width: 1000px;
+  margin: 20px auto;
+  font-size: 17px;
+  color: #fff;
+  font-weight: bold;
+}
 @keyframes cssAnimation {
   0% {
     margin-bottom: -1000px;

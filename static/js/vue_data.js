@@ -326,4 +326,20 @@ let obj = [
     })
     `,
     },
+    
+    {
+        title: 'vue视频播放和关闭',
+        content:  
+    `
+    play_video() {
+        let video_id = document.getElementById("ID");
+        if ('是暂停状态,就从头开始播放') {
+          video_id.load();
+          video_id.play();
+        } else {     // 如果是播放状态,就停止播放
+          video_id.pause();
+        }
+    },
+    `,
+    },
 ];
