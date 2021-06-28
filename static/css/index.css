@@ -107,7 +107,8 @@ body {
 }
 .content {
   user-select: none;
-  height: 650px;
+  /* height: 650px; */
+  height: 90vh;
   overflow: auto;
 }
 @keyframes cssAnimation {
