@@ -54,6 +54,24 @@ let obj = [
     `,
     },
     
+    {
+        title: '禁止F11事件和全屏监听Esc',
+        content:  
+    `
+    document.onkeydown = (event) => {
+      const e = event || window.event
+      if (window.event.keyCode == 122) {
+        e.preventDefault()
+        // 禁止F11事件,122换成其他keykode码也可以
+      }
+    }
+
+    window.onresize = () => {
+        // 监听全屏模式下的esc键
+    }
+    `,
+    },
+    
     
     {
         title: '过滤器 -- 根据文本内容改变字体颜色',
