@@ -72,6 +72,59 @@ let obj = [
     `,
     },
     
+    {
+        title: '点击按钮进入全屏模式',
+        content:  
+    `
+    npm install --save screenfull      // 安装vue插件
+    import screenfull from 'screenfull'        // 引入vue插件
+    isFullscreen: false,      // true为全屏状态  ----------  页面定义变量
+
+    created() {     // 监听事件
+        window.addEventListener('resize', this.onresize)
+        window.addEventListener('keydown', this.keydown)
+    },
+
+    methods: {
+        toggleFullscreen(isFscreen) {
+          if (!screenfull.isEnabled) {
+            console.warn('you browser can not work')
+            return false
+          }
+          screenfull.toggle()
+          this.isFullscreen = isFscreen
+        },
+    
+        // 阻止F11默认事件
+        keydown(event) {
+          if (event.keyCode === 122) {
+            event.preventDefault()
+            event.returnValue = false
+          }
+        },
+    
+        /**
+         * 响应屏幕变化事件，给isFullscreen赋值，标识是否全屏
+         * IE中bug: 调试器打开，且与页面不分离时 -- 无效
+         * **/
+        onresize(event) {
+          // 利用屏幕分辨率和window对象的内高度来判断兼容IE
+          let winFlag = window.innerHeight === window.screen.height
+          // 利用window全屏标识来判断 -- IE无效
+          let isFull = window.fullScreen || document.webkitIsFullScreen
+    
+          if (isFull === undefined) {
+            this.isFullscreen = winFlag
+          } else {
+            this.isFullscreen = winFlag || isFull
+          }
+    
+          console.log('winFlag || isFull', winFlag, isFull)
+        },
+    }
+    `,
+    },
+    
     
     {
         title: '过滤器 -- 根据文本内容改变字体颜色',
