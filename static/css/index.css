@@ -128,7 +128,7 @@ body {
 }
 .content .code-block {
   width: 1000px;
-  max-height: 400px;
+  max-height: 60vh;
   background-color: #F7FFF7;
   overflow: auto;
   border-radius: 10px;

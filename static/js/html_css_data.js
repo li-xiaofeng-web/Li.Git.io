@@ -10,9 +10,6 @@ let obj = [
     *{
         margin: 0；
         padding: 0;
-        list-style: none;   // li 标记
-        text-decoration: none;    // a标签下划线
-        
     }
     img { 
         border:none;
@@ -20,8 +17,38 @@ let obj = [
     button {
         outline: none;
     }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
     `,
     },
+
+    {
+        title: 'CSS 背景',
+        content:  
+    `
+    background-color     // 背景颜色
+    background-position     // (x,y) top left center right bottom 如果仅规定了一个关键词，第二个值将是"center",也可以百分比或像素为单位;
+    background-size     // (x,y) x设置宽度，y设置高度,单位可以是像素和百分比; cover 把背景图像扩展至足够大，以使背景图像完全覆盖背景区域,部分区域会不能展示; contain 把图像扩展至能适应内容区域的最大尺寸;
+    background-repeat     // repeat-x 背景图像将在水平方向重复; repeat-y 背景图像将在垂直方向重复; no-repeat 背景图像将仅显示一次;  
+    background-origin     // padding-box 相对于内边距框来定位; border-box 相对于边框盒来定位; content-box 相对于内容框来定位;
+    background-clip     // padding-box 裁剪到内边距框; border-box 裁剪到边框盒; content-box 裁剪到内容框;
+    background-image     // url(xxx.png)
+    background-attachment     // scroll 默认值,背景图像随页面滚动而移动; fixed 随页面滚动背景图像不会移动;
+    `,
+    },
+
+    {
+        title: 'html',
+        content:  
+    `
+    <img draggable="false" src="路径">    // 禁止图片拖动
+    `,
+    },
+
 
     {
         title: 'html展示 base64 格式图片',
