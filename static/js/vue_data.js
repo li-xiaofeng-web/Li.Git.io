@@ -142,6 +142,26 @@ let obj = [
     `,
     },
     
+    
+    
+    {
+        title: '数组排序',
+        content:  
+    `
+    // 如果是数组套对象,方法里可以点出对象的值
+    // 升序
+    sortNum (a,b) {
+        return a - b
+    }  
+    // 降序
+    sortNum (a,b) {
+        return b - a
+    }  
+    // let arr = [4,2,7,8,1]
+    console.log(arr.sort(sortNum));       // [1, 2, 4, 7, 8]
+    `,
+    },
+    
     {
         title: '返回按钮返回不同页面',
         content:  
